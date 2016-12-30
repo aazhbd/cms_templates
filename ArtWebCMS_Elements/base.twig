@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>{{ user_var.project_name }} - {% block title %}{% endblock %}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <!--[if lte IE 8]>
+    <script src="{{ path_static }}css/ie/html5shiv.js"></script><![endif]-->
+    <script src="{{ path_static }}js/jquery.min.js"></script>
+    <script src="{{ path_static }}js/jquery.dropotron.min.js"></script>
+    <script src="{{ path_static }}js/jquery.scrollgress.min.js"></script>
+    <script src="{{ path_static }}js/jquery.scrolly.min.js"></script>
+    <script src="{{ path_static }}js/jquery.slidertron.min.js"></script>
+    <script src="{{ path_static }}js/skel.min.js"></script>
+    <script src="{{ path_static }}js/skel-layers.min.js"></script>
+    <script src="{{ path_static }}js/init.js"></script>
+    <link rel="stylesheet" href="{{ path_static }}css/skel.css"/>
+    <link rel="stylesheet" href="{{ path_static }}css/style.css"/>
+    <link rel="stylesheet" href="{{ path_static }}css/style-xlarge.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="{{ path_static }}css/ie/v9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="{{ path_static }}css/ie/v8.css"/><![endif]-->
+    {% block headtags %}
+    {% endblock %}
+</head>
+<body>
+
+<!-- Header -->
+<header id="header" class="skel-layers-fixed">
+    <h1><a href="index.html">HTML5 Website <span>by Html5webtemplates.co.uk</span></a></h1>
+    <nav id="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="" class="icon fa-angle-down">Layouts</a>
+                <ul>
+                    <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                    <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                    <li><a href="no-sidebar.html">No Sidebar</a></li>
+                    <li>
+                        <a href="">Submenu</a>
+                        <ul>
+                            <li><a href="#">Option 1</a></li>
+                            <li><a href="#">Option 2</a></li>
+                            <li><a href="#">Option 3</a></li>
+                            <li><a href="#">Option 4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="elements.html">Elements</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main -->
+<section id="main" class="wrapper style1">
+    <header class="major">
+        <h2>No Sidebar</h2>
+        <p>Faucibus neque adipiscing mi lorem semper blandit</p>
+    </header>
+    <div class="container">
+
+        <!-- Content -->
+        <section id="content">
+            <a href="#" class="image fit"><img src="{{ path_static }}images/pic07.jpg" alt=""/></a>
+            <h3>Admin Menu</h3>
+            {% block contentheader %}
+                <div id="banner">
+                    <img src="{{ path_static }}images/logo.gif" id="logo"/>
+
+                    <div id="navigatemenu">
+                        <div class="pure-menu pure-menu-horizontal">
+                            <ul class="pure-menu-list">
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="search" class="pure-form">
+                        <form class="frmsearch" method="post" id="frmsearch" action="">
+					<span>
+						<input type="text" class="search" placeholder="Search" name="search">
+						<input type="submit" class="btnsearch" value="Search" id="submit" name="submit">
+					</span>
+                        </form>
+                    </div>
+
+                    <div id="topright">
+                        <a href="/logout">Logout</a>
+                        |
+                        <a href="/uhome">Member Home</a>
+                    </div>
+
+                </div>
+            {% endblock %}
+            <h3>Body Content</h3>
+            {% block contentbody %}
+                {% for error in errors %}
+                    <div id="reports">{{ error }}</div>
+                {% endfor %}
+
+                {% if title %}
+                    <h2 class="title">{{ title }}</h2>
+                {% endif %}
+
+                {% if subtitle %}
+                    <div id="subtitle">{{ subtitle }}</div>
+                {% endif %}
+
+                {% if body %}
+                    <div class="body">{{ body|raw }}</div>
+                {% endif %}
+            {% endblock %}
+        </section>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+    {% block footers %}
+        <p>
+            &copy; 2015 <a href="http://www.articulatelogic.com/">ArticulateLogic.com</a>
+            | Design: <a href="mailto:aazhbd@yahoo.com">aazhbd</a>
+        </p>
+    {% endblock %}
+    <span class="copyright">
+			&copy; Copyright. All rights reserved. Design by <a href="http://www.html5webtemplates.co.uk">Responsive Web Templates</a>	
+				</span>
+</footer>
+
+</body>
+</html>
